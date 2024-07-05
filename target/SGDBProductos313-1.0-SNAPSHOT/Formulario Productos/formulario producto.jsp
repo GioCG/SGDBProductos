@@ -42,42 +42,44 @@
                </div>
              </div>
      </nav>
-        <div>
+        <div class="container-fluid mt-5">
                 <% ArrayList<String> producto= (ArrayList)request.getAttribute("producto"); %>
-                <% if{
+                <% if(producto !=null){
+                     %> <table class="table table-striped border border-success border-5">
+                        <thead><th> Nombre</th><th> Descripcion</th><th> Marca</th><th> Precio</th></thead><%
                         for(String prod: producto){%>
-                            <ul>
-                                    <li><%=prod%></li>
-                            </ul>
+                                <tbody>
+                                    <tr><td class="nav-item"><%=prod%></td><td> </td> <td> </td> <td> </td></tr>
+                                </tbody>
+                            </table>
                       <%}
                        }    
                 %>
         </div>
         <div class="container mt-5">
-         <form action="/SGDBProductos313/" method="post" enctype=" ">
+         <form action="/SGDBProductos313/producto-servlet/" method="post" enctype="multipart/form-data">
              <div class="form-floating mt-4">
-                 <input class="form-control" id="nombreProducto" type="text" name="nombreProducto">
+                 <input class="form-control" id="nombreProducto" type="text" name="nombreProducto" placeholder="">
                  <label for="nombreProducto"> Nombre del Producto</label>
              </div>
 
              <div class="form-floating mt-4">
-                 <textarea class="form-control"id="descripcionProducto"  type="text" name="descripcionProducto"></textarea>
+                 <textarea class="form-control"id="descripcionProducto"  type="text" name="descripcionProducto" placeholder=""></textarea>
                  <label for="descripcionProducto"> Descripcion del Producto</label>
              </div>
 
              <div class="form-floating mt-4">
-                 <input class="form-control" id="marcaProducto" name="marcaProducto" type="text">
+                 <input class="form-control" id="marcaProducto" name="marcaProducto" type="text" placeholder="">
                  <label for="marcaProducto"> Marca del Producto</label>
              </div>
 
              <div class="input-group mt-4">
                  <span class="input-group-text">Q.</span>
-                 <input type="text" class="form-control" name="precioProducto">
+                 <input type="text" class="form-control" name="precioProducto" id="precioProducto" placeholder="">
                  <span class="input-group-text">.00</span>
              </div>
-             <div class="form-floating mt-4">
-                 <button type="button" class="btn btn-success">Enviar</button>
-                 
+             <div class="container-fluid mt-4">
+                 <input type="submit" class="btn btn-outline-success" value="Agregar">   
              </div>
          </form>
      </div>

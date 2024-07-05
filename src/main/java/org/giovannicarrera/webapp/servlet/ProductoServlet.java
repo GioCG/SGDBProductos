@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package org.giovannicarrera.webapp.servlet;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -35,8 +33,7 @@ public class ProductoServlet  extends HttpServlet{
         producto.add(Double.toString(precioProducto));
         
         req.setAttribute("producto", producto);
-        getServletContext(),getRequestDispatcher("/Formulario Productos/formulario productos.jsp").forward(req,resp);
-        
+        getServletContext().getRequestDispatcher("/Formulario Productos/formulario producto.jsp").forward(req,resp);
     }
       
 }
