@@ -1,0 +1,6 @@
+org\giovannicarrera\webapp\service\ProductoService.class
+main.class
+org\giovannicarrera\webapp\entity\Producto.class
+org\giovannicarrera\webapp\service\IProductoService.class
+org\giovannicarrera\webapp\servlet\ProductoServlet.class
+org\giovannicarrera\webapp\util\JpaUtil.class

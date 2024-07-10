@@ -1,8 +1,5 @@
-<%-- 
-    Document   : listar productos
-    Created on : 3/07/2024, 09:44:24
-    Author     : informatica
---%>
+<%import java.util.List;
+import org.giovannicarrera.webapp.entity.Producto;%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -34,7 +31,7 @@
                       <a class="nav-link"  href=".././Formulario Productos/formulario producto.jsp">Formulario Producto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="lista productos.jsp">Lista Productos</a>
+                        <a class="nav-link" href="producto-servlet">Lista Productos</a>
                     </li>
                   </ul>
                 </div>
@@ -44,10 +41,19 @@
         <div class="container-fluid mt-5">
             <table class="table table-striped border border-success border-5">
                 <thead><th> #</th><th> Nombre</th><th> Descripcion</th><th> Marca</th><th> Precio</th></thead>
-                <tbody>
-                    <tr><td>1</td><td>Leche</td><td>bebida lactea con vitaminas A, B12 y riboflavina</td><td>Otuc</td><td>Q30.00</td></tr>
-                    <tr><td>2</td><td>Miel</td><td>Miel de abeja real</td><td>Castañeda</td><td>Q25.00</td></tr>
-                    <tr><td>3</td><td>yogurt</td><td>yogurt girego</td><td>Perez</td><td>Q15.00</td></tr>
+                <tbody>                 
+                        <%List<Productos> productos = (List)request.getAttribute("productos"); %>
+                        <% 
+                                for(Producto producto:productos){%>
+                                <tr>
+                                    <th scope="row"><%=producto.getProductoId()%> </th>
+                                    <td><%=producto.getNombreProducto()%></td>
+                                    <td><%=producto.getMarcaProducto()%></td>
+                                    <td><%=producto.getDescripcionProducto()%></td>
+                                    <td><%=producto.getPrecioProducto()%></td>
+                                </tr>
+                            <%}
+                        %>
                 </tbody>
             </table>
         </div>
