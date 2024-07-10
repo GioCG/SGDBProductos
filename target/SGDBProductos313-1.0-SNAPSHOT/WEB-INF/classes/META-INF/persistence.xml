@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence>
+    <persistence-unit name ="SGDBProductos" transaction-type="RESOURCE_LOCAL">
+       <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+       
+       <properties>
+       <property name="jakarta.perisstence.jadbc.driver" value ="com.mysql.cj.jdbc.Driver"/>
+       <property name="jakarta.perisstence.jadbc.url" value ="jdbc:mysql://localhost:3306/SGDBProductos313?serverTimezone=GMT-6"/>
+       <property name="jakarta.perisstence.jadbc.user" value ="giovanniCarrera"/>
+       <property name="jakarta.perisstence.jadbc.password" value ="jjVuGB8u"/>
+       <property name="hibernate.dialect" value ="org.hibernate.dialect.MySQL8Dialect"/>
+       <property name="hibernate.hbm2ddl.auto" value ="create"/>
+       <!-- opcional -->
+       <property name="hibernate.show_sql" value ="true"/>
+       <property name="hibernate.format_sql" value ="true"/>
+       <property name="jakarta.persistens.schema-generation.databes.action" value ="update"/>
+       </properties>
+    </persistence-unit>
+</persistence>
+
+<root>
+    
+</root>
+
